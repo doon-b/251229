@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import koreanize_matplotlib
 
-# 한글 폰트 설정
-plt.rcParams['font.family'] = 'Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] = False
 
 
@@ -122,4 +121,5 @@ def run_analysis():
 
 
 if __name__ == "__main__":
+
     run_analysis()
