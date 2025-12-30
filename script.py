@@ -107,11 +107,11 @@ def run_analysis():
     def highlight_cols(x):
         df_style = pd.DataFrame('', index=x.index, columns=x.columns)
         if mode == "🚨 즉시 점검 대상":
-            df_style['총_위험점수'] = 'background-color: #ffcccc' # 분홍색
+            df_style['총_위험점수'] = 'background-color: #fc4242' # 빨강
         elif mode == "📂 대량조회 의심":
-            df_style['길이'] = 'background-color: #e6f3ff' # 하늘색
+            df_style['길이'] = 'background-color: #fc4242' 
         elif mode == "🌙 야간 접근 로그":
-            df_style['야간 근무 여부'] = 'background-color: #fff3cd' # 노란색
+            df_style['야간 근무 여부'] = 'background-color: #fc4242' 
         return df_style
 
     # 표 출력
@@ -123,4 +123,5 @@ def run_analysis():
 
 if __name__ == "__main__":
     run_analysis()
+
 
