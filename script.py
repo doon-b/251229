@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import koreanize-matplotlib
+import koreanize_matplotlib
 
 plt.rcParams['axes.unicode_minus'] = False
 
@@ -123,4 +123,5 @@ def run_analysis():
 if __name__ == "__main__":
 
     run_analysis()
+
 
