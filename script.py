@@ -15,6 +15,7 @@ def load_data():
     # 데이터 타입 변환
     df['처리시각'] = pd.to_numeric(df['처리시각'], errors='coerce').fillna(0).astype(int)
     df['길이'] = pd.to_numeric(df['길이'], errors='coerce').fillna(0).astype(int)
+    df['직원번호'] = df['직원번호'].astype(str)
     
     return df
 
@@ -123,6 +124,7 @@ def run_analysis():
 
 if __name__ == "__main__":
     run_analysis()
+
 
 
 
