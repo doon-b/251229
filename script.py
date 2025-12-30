@@ -31,6 +31,11 @@ def run_analysis():
         score = 0
         if row['마스크해제여부'] == 'Y': score += 50
         if row['야간 근무 여부'] == '보안취약(야간)': score += 30
+
+        if row['기능구분코드'] == '삭제': 
+            score += 20  # 데이터 훼손 위험
+        elif row['기능구분코드'] == '출력':
+            score += 15  # 물리적 유출 위험
         if row['길이'] >= 300: score += 20
         return score
 
@@ -102,7 +107,7 @@ def run_analysis():
     st.markdown(description)
 
     # 데이터 정렬: 선택한 모드의 핵심 컬럼이 위로 오게 함
-    df_sorted = df_display[['직원번호', '처리시각', '업무 분류', '화면명', '야간 근무 여부', '마스크해제여부', '길이', '총_위험점수']].sort_values(by=sort_col, ascending=False)
+    df_sorted = df_display[['직원번호', '처리시각', '업무 분류', '화면명', '기능구분코드', '야간 근무 여부', '마스크해제여부', '길이', '총_위험점수']].sort_values(by=sort_col, ascending=False)
 
     # 특정 컬럼 색상 강조 함수
     def highlight_cols(x):
@@ -124,6 +129,7 @@ def run_analysis():
 
 if __name__ == "__main__":
     run_analysis()
+
 
 
 
