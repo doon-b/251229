@@ -13,8 +13,8 @@ def load_data():
     df = df.dropna(subset=['직원번호', '처리시각']) 
     
     # 데이터 타입 변환
-    df['처리시각'] = pd.to_numeric(df['처리시각'], errors='coerce')
-    df['길이'] = pd.to_numeric(df['길이'], errors='coerce').fillna(0)
+    df['처리시각'] = pd.to_numeric(df['처리시각'], errors='coerce').fillna(0).astype(int)
+    df['길이'] = pd.to_numeric(df['길이'], errors='coerce').fillna(0).astype(int)
     
     return df
 
@@ -123,5 +123,6 @@ def run_analysis():
 
 if __name__ == "__main__":
     run_analysis()
+
 
 
