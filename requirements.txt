@@ -1,4 +1,4 @@
 streamlit
 pandas
 matplotlib
-koreanize_matplotlib
+koreanize-matplotlib
