@@ -101,7 +101,7 @@ def run_analysis():
     st.markdown(description)
 
     # 데이터 정렬: 선택한 모드의 핵심 컬럼이 위로 오게 함
-    df_sorted = df_display[['직원번호', '업무 분류', '화면명', '야간 근무 여부', '마스크해제여부', '길이', '총_위험점수']].sort_values(by=sort_col, ascending=False)
+    df_sorted = df_display[['직원번호', '처리시각', '업무 분류', '화면명', '야간 근무 여부', '마스크해제여부', '길이', '총_위험점수']].sort_values(by=sort_col, ascending=False)
 
     # 특정 컬럼 색상 강조 함수
     def highlight_cols(x):
@@ -123,3 +123,4 @@ def run_analysis():
 
 if __name__ == "__main__":
     run_analysis()
+
